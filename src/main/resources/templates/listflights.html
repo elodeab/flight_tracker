@@ -10,7 +10,36 @@
 <body>
 
     <div class="container">
-        <table  class="table table-striped table-bordered">
+
+    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/realtimeflights/list}">Flight Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Real Time Flights</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Historical Flights</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <br><br>
+    <table  class="table table-striped table-bordered">
             <thead class="table-dark">
             <tr>
                 <th> Aircraft Iata Code </th>
@@ -23,6 +52,9 @@
 
                 <th> Departure - Iata Code </th>
                 <th> Departure - Icao Code </th>
+
+                <th> Status </th>
+                <th> Speed </th>
 
             </tr>
             </thead>
@@ -40,16 +72,20 @@
                 <td th:text = "${flight.departureIata}"></td>
                 <td th:text = "${flight.departureIcao}"></td>
 
+                <td th:text = "${flight.status}"></td>
+                <td th:text = "${flight.speed}"></td>
+
             </tr>
             </tbody>
         </table>
-    </div>
+
 
     <div class="row">
-        <div class="col-lg-3">
-            <a th:href="@{/realtimeflights/new}" class="btn btn-primary btn-sm mb-3">Add Student</a>
+        <div class="col-lg-5">
+            <a th:href="@{/realtimeflights/new}" class="btn btn-primary btn-lg mb-7">Add New Flight Info</a>
         </div>
     </div>
 
+    </div>
 </body>
 </html>

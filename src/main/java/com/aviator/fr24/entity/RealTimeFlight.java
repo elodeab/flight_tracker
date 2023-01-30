@@ -40,6 +40,28 @@ public class RealTimeFlight {
     @Column(name = "d_icao")
     private String departureIcao;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(String speed) {
+        this.speed = speed;
+    }
+
+    @Column(name="status")
+    private String status;
+
+    @Column(name = "speed")
+    private String speed;
+
 
     public UUID getId() {
         return id;
@@ -113,7 +135,7 @@ public class RealTimeFlight {
         this.departureIcao = departureIcao;
     }
 
-    public RealTimeFlight(String aircraftIataCode, String aircraftIcaoCode, String aircraftIcao24, String aircraftRegNumber, String arrivalIata, String arrivalIcao, String departureIata, String departureIcao) {
+    public RealTimeFlight(String aircraftIataCode, String aircraftIcaoCode, String aircraftIcao24, String aircraftRegNumber, String arrivalIata, String arrivalIcao, String departureIata, String departureIcao, String status, String speed) {
         this.aircraftIataCode = aircraftIataCode;
         this.aircraftIcaoCode = aircraftIcaoCode;
         this.aircraftIcao24 = aircraftIcao24;
@@ -122,6 +144,8 @@ public class RealTimeFlight {
         this.arrivalIcao = arrivalIcao;
         this.departureIata = departureIata;
         this.departureIcao = departureIcao;
+        this.status = status;
+        this.speed = speed;
     }
 
     public RealTimeFlight(){
