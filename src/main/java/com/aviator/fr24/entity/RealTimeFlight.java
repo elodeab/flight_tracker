@@ -113,5 +113,20 @@ public class RealTimeFlight {
     public void setDepartureIcao(String departureIcao) {
         this.departureIcao = departureIcao;
     }
+
+    public RealTimeFlight(String aircraftIataCode, String aircraftIcaoCode, String aircraftIcao24, String aircraftRegNumber, String arrivalIata, String arrivalIcao, String departureIata, String departureIcao) {
+        this.aircraftIataCode = aircraftIataCode;
+        this.aircraftIcaoCode = aircraftIcaoCode;
+        this.aircraftIcao24 = aircraftIcao24;
+        this.aircraftRegNumber = aircraftRegNumber;
+        this.arrivalIata = arrivalIata;
+        this.arrivalIcao = arrivalIcao;
+        this.departureIata = departureIata;
+        this.departureIcao = departureIcao;
+    }
+
+    public RealTimeFlight(){
+        
+    }
 }
 

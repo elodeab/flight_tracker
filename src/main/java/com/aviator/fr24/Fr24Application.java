@@ -10,4 +10,6 @@ public class Fr24Application {
 		SpringApplication.run(Fr24Application.class, args);
 	}
 
+
+
 }
