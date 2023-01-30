@@ -5,4 +5,6 @@ import com.aviator.fr24.entity.RealTimeFlight;
 
 public interface RealTimeFlightService {
     List<RealTimeFlight> listFlights();
+
+    RealTimeFlight saveInfo(RealTimeFlight realTimeFlight);
 }

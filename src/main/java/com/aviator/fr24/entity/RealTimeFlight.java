@@ -5,25 +5,24 @@ import jakarta.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name="RealTimeFlight")
+@Table(name="real_flight",schema = "public")
 public class RealTimeFlight {
 
     @Id
     @GeneratedValue(generator = "UUID")
     private UUID id;
 
-
     // aircraft
-    @Column(name="aircraftIataCode",nullable = false)
+    @Column(name="aircraft_iata",nullable = false)
     private String aircraftIataCode;
 
-    @Column(name="aircraftIcaoCode")
+    @Column(name="aircraft_icao")
     private String aircraftIcaoCode;
 
-    @Column(name="aircraftIcao24")
+    @Column(name="aircraft_icao24")
     private String aircraftIcao24;
 
-    @Column(name="aircraftRegNumber")
+    @Column(name="aircraft_regnumber")
     private String aircraftRegNumber;
 
     // arrival
@@ -126,7 +125,7 @@ public class RealTimeFlight {
     }
 
     public RealTimeFlight(){
-        
+
     }
 }
 
