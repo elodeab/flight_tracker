@@ -6,6 +6,7 @@ import com.aviator.fr24.service.RealTimeFlightService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class RealTimeFlightServiceImp implements RealTimeFlightService {
@@ -25,5 +26,20 @@ public class RealTimeFlightServiceImp implements RealTimeFlightService {
     public RealTimeFlight saveInfo(RealTimeFlight realTimeFlight) {
         return realTimeFlightRepository.save(realTimeFlight);
 
+    }
+
+    @Override
+    public RealTimeFlight updateFlight(RealTimeFlight realTimeFlight) {
+        return realTimeFlightRepository.save(realTimeFlight);
+    }
+
+    @Override
+    public RealTimeFlight getFlightById(UUID id) {
+        return realTimeFlightRepository.findById(id).get();
+    }
+
+    @Override
+    public void deleteFlightById(UUID id) {
+        realTimeFlightRepository.deleteById(id);
     }
 }

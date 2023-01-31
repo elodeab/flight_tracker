@@ -14,9 +14,11 @@
     <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" th:href="@{/realtimeflights/list}">Flight Tracker</a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -26,11 +28,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Historical Flights</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/realtimeflights/new}">Add New Flight Info</a>
                     </li>
 
                 </ul>
@@ -53,8 +51,10 @@
                 <th> Departure - Iata Code </th>
                 <th> Departure - Icao Code </th>
 
-                <th> Status </th>
-                <th> Speed </th>
+                <th> Flight Status </th>
+                <th> Flight Speed </th>
+
+                <th> Edit </th>
 
             </tr>
             </thead>
@@ -74,6 +74,14 @@
 
                 <td th:text = "${flight.status}"></td>
                 <td th:text = "${flight.speed}"></td>
+
+                <td>
+                    <a th:href = "@{/realtimeflights/edit/{id}(id=${flight.id})}"
+                       class="btn btn-primary">UPDATE</a>
+
+                    <a th:href = "@{/realtimeflights/{id}(id=${flight.id})}"
+                       class="btn btn-danger">DELETE</a>
+                </td>
 
             </tr>
             </tbody>
